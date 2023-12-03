@@ -97,6 +97,11 @@
         opacity: 0,
         display: 'none', 
         onComplete: animDone,
+      }).from(".caligraphy", {
+        x: 200,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power4.out', 
       })
       .from('.user', {
           y: -100,
