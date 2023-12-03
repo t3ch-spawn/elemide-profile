@@ -31,24 +31,26 @@
           duration : 1,
           ease: 'power4.inOut',
 
-          onStart: loaded
+          onStart: loaded,
+          onComplete: animateIn
         })
 
-      })
-
-      // barba.config.js
-      gsap.timeline().from(".caligraphy", {
+        function animateIn(){
+          gsap.timeline().fromTo(".caligraphy", {
         x: 200,
         opacity: 0,
         duration: 0.8,
-        ease: 'power4.out'
-      }).from(nameCont, {
+        ease: 'power4.out', 
+      }, {opacity: 1, x: 0}).fromTo(nameCont, {
 
           y: 150,
           opacity: 0,
           duration: 0.4,
-    
+    }, {opacity: 1, y: 0})
+  }
 })
+
+
     
     // const init = () => {
     //   // Your initialization code, if any
@@ -122,9 +124,9 @@
       </div>
     
       <!-- caligraphy image -->
-      <img src={caligraphy} class="caligraphy top-0 max-w-[180px] left-0 fixed" alt="">
+      <img src={caligraphy} class="caligraphy opacity-0 top-0 max-w-[180px] left-0 fixed" alt="">
     
-      <div bind:this={nameCont} class="flex flex-col items-center gap-8">
+      <div bind:this={nameCont} class="flex flex-col items-center gap-8 opacity-0">
         <p class="text-3xl text-center">What's your name?</p>
         <input
           type="text"
