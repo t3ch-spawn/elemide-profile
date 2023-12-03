@@ -25,8 +25,8 @@
     onMount(()=>{
 
       window.addEventListener('load', ()=>{
-        console.log('hello')
-        gsap.to('.loader', {
+        setTimeout(() => {
+          gsap.to('.loader', {
           height: 0,
           duration : 1,
           ease: 'power4.inOut',
@@ -34,6 +34,7 @@
           onStart: loaded,
           onComplete: animateIn
         })
+        }, 1000);
 
         function animateIn(){
           gsap.timeline().fromTo(".caligraphy", {
