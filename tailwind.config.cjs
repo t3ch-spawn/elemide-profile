@@ -7,7 +7,8 @@ export default {
         bgBlack: 'black',
         test1: '#F49D37',
         test2: 'rgb(237, 157, 59, 0.3)',
-        test3: '#F4B942'
+        test3: '#F4B942',
+        loader: '#F3F3F3'
       }
     },
   },

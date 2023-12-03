@@ -12,12 +12,30 @@
       let inp
       let nameCont
       let done = false
+      let hasLoaded = false
 
       function animDone(){
       done = true
     }
-    
+
+    function loaded(){
+
+      hasLoaded = true
+    }
     onMount(()=>{
+
+      window.addEventListener('load', ()=>{
+        console.log('hello')
+        gsap.to('.loader', {
+          height: 0,
+          duration : 1,
+          ease: 'power4.inOut',
+
+          onStart: loaded
+        })
+
+      })
+
       // barba.config.js
       gsap.timeline().from(".caligraphy", {
         x: 200,
@@ -97,6 +115,11 @@
     </script>
     
     <main data-barba="container" data-barba-namespace="home" class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh] w-[100%]">
+
+      <!-- Container for preloader -->
+      <div class={`text-black loader bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-full justify-center items-center z-[4]`}>
+       <p class= {` ${ hasLoaded ? 'hidden' : 'flex'}`}>Loading...</p>
+      </div>
     
       <!-- caligraphy image -->
       <img src={caligraphy} class="caligraphy top-0 max-w-[180px] left-0 fixed" alt="">
