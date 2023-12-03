@@ -110,9 +110,48 @@
             opacity: 0,
           },
           { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
-        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.5, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
+        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.1, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
     
     }
+
+
+    // Date countdown
+
+
+
+    // const minutes = secsLeft / 60
+    // const hours = minutes / 60
+    // const days = hours / 24
+
+let days, hours, mins, secs
+
+    setInterval(() => {
+
+      const agendaDate = new Date(2024, 0, 12)
+    const currentDate = new Date()
+    const timeMilli = agendaDate - currentDate
+
+    const secsLeft = Math.round(timeMilli/1000)
+    const daysInSecs = secsLeft / 86400
+
+    hours = Math.round((secsLeft / 3600) % 24)
+    days = Math.round(daysInSecs)
+    mins = Math.round((secsLeft / 60 )% 60 )
+    secs = Math.round(secsLeft % 60)
+    
+
+    if(secs == 0){
+      secs = 60
+    }
+    // const hoursInSecs = (daysInSecs - days) * 24
+    // const minsInsecs = hoursInSecs * 60 * 24
+    //  mins = Math.round(minsInsecs)
+    //  secs = Math.round((minsInsecs - mins ) * 60) + 29
+
+    
+      
+    }, 1000);
+
     </script>
     
     <main class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh]">
@@ -141,6 +180,8 @@
         >
           Procced
         </button>
+
+        
       </div>
     
     
@@ -162,6 +203,30 @@
           Sed nulla dolorem illum consectetur sapiente amet. Alias nobis quam, ipsa quia dolorum sit ab expedita, neque sapiente minus porro
           </p>
       </div>
+
+      <!-- The countdown div -->
+<div>
+
+    <div class="border-test3 border-[1px] flex flex-col justify-center items-center p-4 gap-4">
+      <p class="text-test3">Countdown to the **** agenda</p>
+      <div class="text-test3 flex gap-4">
+        <p>{`${days}`.padStart(2, '0')} days</p>
+
+        {#if hours != 0}
+        <p>{`${hours}`.padStart(2, '0')}  hrs</p>
+        {/if}
+
+        {#if mins != 0}
+        <p>{`${mins}`.padStart(2, '0')}  mins</p>
+        {/if}
+
+        <p>{`${secs}`.padStart(2, '0')} secs</p>
+
+      </div>
+    </div>
+
+</div>
+
     
     </div>
 
