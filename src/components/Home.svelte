@@ -16,6 +16,26 @@
 
       function animDone(){
       done = true
+      gsap.timeline().fromTo(".caligraphy", {
+        y: 200,
+        x: 0,
+        opacity: 0,
+      },{y: 0, x:0, opacity: 1,    duration: 0.8,
+        ease: 'power4.out', })
+      .from('.user', {
+          y: -100,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'ease-in',
+        }).fromTo(
+          element.querySelectorAll(".char"),
+          {
+            y: 100,
+            opacity: 0,
+          },
+          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
+        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.5, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
+    
     }
 
     function loaded(){
@@ -86,39 +106,17 @@
         return
       }
     
-    
       let myParas = new SplitType(".elems", { types: "chars" });
       gsap.timeline().to('.caligraphy', {
           x: 200,
           opacity: 0,
+          duration: 0.6
       }).to(nameCont, {
-    
         y: -100,
         opacity: 0,
         display: 'none', 
         onComplete: animDone,
-      }).from(".caligraphy", {
-        x: 200,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power4.out', 
       })
-      .from('.user', {
-          y: -100,
-          opacity: 0,
-          duration: 0.4,
-          ease: 'ease-in',
-   
-
-        }).fromTo(
-          element.querySelectorAll(".char"),
-          {
-            y: 100,
-            opacity: 0,
-          },
-          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
-        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.5, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
-    
     }
     </script>
     
@@ -151,7 +149,7 @@
     
     
     <div class={`${ user && done ? 'opacity-1 h-full' : 'opacity-0 h-0'} duration-300 flex flex-col gap-8 items-center`}>
-      <p class="text-2xl user mt-[100px]">Hi {user}, </p>
+      <p class="text-2xl user mt-[200px]">Hi {user}, </p>
     
     
       <div class="overflow-hidden">
