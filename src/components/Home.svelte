@@ -11,6 +11,7 @@
       let user 
       let inp
       let nameCont
+      let aboutPara
       let done = false
       let hasLoaded = false
 
@@ -29,7 +30,7 @@
         setTimeout(() => {
           gsap.to('.loader', {
           height: 0,
-          duration : 1,
+          duration : 1.2,
           ease: 'power4.inOut',
 
           onStart: loaded,
@@ -110,7 +111,7 @@
             opacity: 0,
           },
           { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
-        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.1, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
+        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.1, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo(".paragraph", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
     
     }
 
@@ -134,9 +135,9 @@ let days, hours, mins, secs
     const secsLeft = Math.round(timeMilli/1000)
     const daysInSecs = secsLeft / 86400
 
-    hours = Math.round((secsLeft / 3600) % 24)
-    days = Math.round(daysInSecs)
-    mins = Math.round((secsLeft / 60 )% 60 )
+    hours = Math.floor((secsLeft / 3600) % 24)
+    days = Math.floor(daysInSecs)
+    mins = Math.floor((secsLeft / 60 )% 60 )
     secs = Math.round(secsLeft % 60)
     
 
@@ -157,8 +158,8 @@ let days, hours, mins, secs
     <main class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh]">
 
       <!-- Container for preloader -->
-      <div class={`text-black loader bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-full justify-center items-center z-[4]`}>
-       <p class= {` ${ hasLoaded ? 'hidden' : 'flex'}`}>Loading...</p>
+      <div class={`text-black loader rounded-b-[120%] bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-[220%] justify-center items-center z-[4]`}>
+       <p class= {` ${ hasLoaded ? 'hidden' : 'flex'} fixed top-[50%] translate-y-[50%]`}>Loading...</p>
       </div>
     
     <div class="overflow-hidden w-full top-0 left-0 fixed">
@@ -186,51 +187,48 @@ let days, hours, mins, secs
     
     
     
-    <div class={`${ user && done ? 'opacity-1 h-full' : 'opacity-0 h-0'} duration-300 flex flex-col gap-8 items-center`}>
+    <div class={`${ user && done ? 'flex' : 'hidden'} duration-300 flex-col gap-12 items-center`}>
       <p class="text-2xl user mt-[150px]">Hi {user}, </p>
     
     
       <div class="overflow-hidden">
-      <p bind:this={element} on:click={animate} class="elems text-5xl">MEET ELEMIDE</p>
+      <p bind:this={element} on:click={animate} class="elems text-5xl">MEETE LEMIDE</p>
       </div>
 
       <img src={meet} class="image scale-y-0 max-w-[300px] border-white border-2" alt="">
 
 
       <div class="overflow-hidden flex">
-        <p class="paragraph w-[90%] max-w-[800px] mx-auto text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro a ratione, qui non doloremque accusamus molestiae. Odio amet, id ratione commodi necessitatibus quam libero nemo sapiente, distinctio atque omnis? Exercitationem.
-          Atque temporibus, maiores autem obcaecati, odit repellat, in illo eos nihil omnis quisquam sit laborum dolores cupiditate nam tempore asperiores reprehenderit earum similique inventore nostrum? Distinctio, est. Dolores, nam quaerat.
-          Sed nulla dolorem illum consectetur sapiente amet. Alias nobis quam, ipsa quia dolorum sit ab expedita, neque sapiente minus porro
+        <p class="paragraph w-[90%] max-w-[800px] mx-auto text-center flex" bind:this={aboutPara}>ELEMIDE; a 200 level Civil Engineering student, is widely known among UITES for his social nature. He has shown exemplary leadership and followership skills, actively heading and participating in various committees, including committees in the Students' Union.
+          With a strong interest in politics, ELEMIDE has made his mark in the political space on campus. <br> Outside of his academic pursuits, he enjoys playing the piano, engaging in occasional sports, and eating good food.
+          Importantly, ELEMIDE is your guy!
           </p>
       </div>
 
       <!-- The countdown div -->
-<div>
-
-    <div class="border-test3 border-[1px] flex flex-col justify-center items-center p-4 gap-4">
-      <p class="text-test3">Countdown to the **** agenda</p>
-      <div class="text-test3 flex gap-4">
-        <p>{`${days}`.padStart(2, '0')} days</p>
-
-        {#if hours != 0}
-        <p>{`${hours}`.padStart(2, '0')}  hrs</p>
-        {/if}
-
-        {#if mins != 0}
-        <p>{`${mins}`.padStart(2, '0')}  mins</p>
-        {/if}
-
-        <p>{`${secs}`.padStart(2, '0')} secs</p>
-
+      <div class="border-test3 border-[1px] flex flex-col justify-center items-center p-4 gap-4 mb-10">
+        <p class="text-test3 text-center">ELEMIDE has got UITES curious about “The ***** Agenda.” <br> <br>
+          What is “The ***** Agenda?” <br>
+          Find out in: <br>
+       </p>
+        <div class="text-test3 flex gap-4">
+          <p>{`${days}`.padStart(2, '0')} days</p>
+  
+       
+          <p>{`${hours}`.padStart(2, '0')}  hrs</p>
+         
+  
+          {#if mins != 0}
+          <p>{`${mins}`.padStart(2, '0')}  mins</p>
+          {/if}
+  
+          <p>{`${secs}`.padStart(2, '0')} secs</p>
+  
+        </div>
       </div>
+
     </div>
 
-</div>
-
-    
-    </div>
-
-    <!-- <Link to = '/about'>About</Link>     -->
     
     </main>
     
