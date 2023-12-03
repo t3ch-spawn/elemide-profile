@@ -91,7 +91,7 @@
             opacity: 0,
           },
           { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
-        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.2, transformOrigin: "bottom center", ease: "power4.out" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
+        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.2, transformOrigin: "bottom center", ease: "power4.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
     
     }
     </script>

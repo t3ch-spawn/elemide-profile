@@ -2,12 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    display: flex;
-    flex-direction: column;
-}
 
-
-.weofuwe{
-    color: rgba(255, 184, 96, 0.9)
-}
