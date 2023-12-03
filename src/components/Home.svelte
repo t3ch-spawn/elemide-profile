@@ -179,7 +179,7 @@ let days, hours, mins, secs
           on:click={animate}
           class="text-2xl border-test3 border-2 rounded-xl p-2 "
         >
-          Procced
+          Proceed
         </button>
 
         
