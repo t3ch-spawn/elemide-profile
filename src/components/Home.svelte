@@ -116,7 +116,7 @@
     }
     </script>
     
-    <main data-barba="container" data-barba-namespace="home" class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh] w-[100%]">
+    <main class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh] w-[100%]">
 
       <!-- Container for preloader -->
       <div class={`text-black loader bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-full justify-center items-center z-[4]`}>
