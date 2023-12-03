@@ -16,26 +16,7 @@
 
       function animDone(){
       done = true
-      gsap.timeline().fromTo(".caligraphy", {
-        y: 200,
-        x: 0,
-        opacity: 0,
-      },{y: 0, x:0, opacity: 1,    duration: 0.8,
-        ease: 'power4.out', })
-      .from('.user', {
-          y: -100,
-          opacity: 0,
-          duration: 0.4,
-          ease: 'ease-in',
-        }).fromTo(
-          element.querySelectorAll(".char"),
-          {
-            y: 100,
-            opacity: 0,
-          },
-          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
-        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.5, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
-    
+
     }
 
     function loaded(){
@@ -116,7 +97,21 @@
         opacity: 0,
         display: 'none', 
         onComplete: animDone,
-      })
+      })     
+      .from('.user', {
+          y: -100,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'ease-in',
+        }).fromTo(
+          element.querySelectorAll(".char"),
+          {
+            y: 100,
+            opacity: 0,
+          },
+          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "ease-in" }
+        ).fromTo('.image', { opacity: 0, scaleY: 0}, { opacity: 1, scaleY: 1, duration: 1.5, transformOrigin: "bottom center", ease: "circ.inOut" }).fromTo('.paragraph', {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.6})
+    
     }
     </script>
     
@@ -127,8 +122,10 @@
        <p class= {` ${ hasLoaded ? 'hidden' : 'flex'}`}>Loading...</p>
       </div>
     
-      <!-- caligraphy image -->
-      <img src={caligraphy} class="caligraphy opacity-0 top-0 max-w-[180px] left-0 fixed" alt="">
+    <div class="overflow-hidden w-full top-0 left-0 fixed">
+        <!-- caligraphy image -->
+        <img src={caligraphy} class="caligraphy opacity-0 max-w-[180px]"  alt="">
+    </div>
     
       <div bind:this={nameCont} class="flex flex-col items-center gap-8 opacity-0">
         <p class="text-3xl text-center">What's your name?</p>
@@ -149,7 +146,7 @@
     
     
     <div class={`${ user && done ? 'opacity-1 h-full' : 'opacity-0 h-0'} duration-300 flex flex-col gap-8 items-center`}>
-      <p class="text-2xl user mt-[200px]">Hi {user}, </p>
+      <p class="text-2xl user mt-[150px]">Hi {user}, </p>
     
     
       <div class="overflow-hidden">
