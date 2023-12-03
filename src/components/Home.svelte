@@ -144,7 +144,7 @@
       </div>
     
     
-<!--     
+    
     <div class={`${ user && done ? 'opacity-1 h-full' : 'opacity-0 h-0'} duration-300 flex flex-col gap-8 items-center`}>
       <p class="text-2xl user mt-[150px]">Hi {user}, </p>
     
@@ -163,7 +163,7 @@
           </p>
       </div>
     
-    </div> -->
+    </div>
 
     <!-- <Link to = '/about'>About</Link>     -->
     
