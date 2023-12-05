@@ -45,7 +45,7 @@
         x: 200,
         opacity: 0,
         duration: 1.2,
-        ease: 'power4.out', 
+        ease: 'power4.inOut', 
       }, {opacity: 1, x: 0}).fromTo(nameCont, {
 
           y: 150,
