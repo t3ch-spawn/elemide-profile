@@ -201,7 +201,7 @@ let days, hours, mins, secs
     
     
       <div class="overflow-hidden">
-      <p bind:this={element} on:click={animate} class="elems text-5xl">MEETE LEMIDE</p>
+      <p bind:this={element} on:click={animate} class="elems text-4xl">MEETE LEMIDE</p>
       </div>
 
       <img src={meet} class="image scale-y-0 max-w-[300px] border-white border-2" alt="">
