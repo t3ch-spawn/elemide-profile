@@ -13,7 +13,7 @@
       let nameCont
       let aboutPara
       let done = false
-      let hasLoaded = false
+      let hasLoaded = false 
 
       function animDone(){
       done = true
@@ -26,6 +26,8 @@
     }
     onMount(()=>{
 
+      gsap.fromTo('.load-dots',{y: -30, opacity: 0, duration: 2}, { y: -5, stagger: 0.4, repeat: -1, ease: 'bounce', opacity: 1})
+
       window.addEventListener('load', ()=>{
         setTimeout(() => {
           gsap.to('.loader', {
@@ -36,7 +38,7 @@
           onStart: loaded,
           onComplete: animateIn
         })
-        }, 1000);
+        }, 1500);
 
         function animateIn(){
           gsap.timeline().fromTo(".caligraphy", {
@@ -159,7 +161,14 @@ let days, hours, mins, secs
 
       <!-- Container for preloader -->
       <div class={`text-black loader rounded-b-[120%] bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-[220%] justify-center items-center z-[4]`}>
-       <p class= {` ${ hasLoaded ? 'hidden' : 'flex'} fixed top-[50%] translate-y-[50%]`}>Loading...</p>
+       <div class= {` ${ hasLoaded ? 'hidden' : 'flex'} fixed top-[50%] translate-y-[50%]`}>
+      
+          <p>Loading</p>
+          <p class="load-dots">.</p>
+          <p class="load-dots">.</p>
+          <p class="load-dots">.</p>
+
+      </div>
       </div>
     
     <div class="overflow-hidden w-full top-0 left-0 fixed">
@@ -233,6 +242,10 @@ let days, hours, mins, secs
     </main>
     
     <style>
+
+      .load-dots{
+        margin-inline: 10px;
+      }
     
     </style>
     

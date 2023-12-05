@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Gabriel Weiss';
+    src: url('./assets/gabriel-weiss-friends-font/GabrielWeissFriendsFont-VGq7B.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +12,10 @@
     margin: 0;
     padding: 0;
 
+}
+
+body{
+    font-family: 'Gabriel Weiss', sans-serif;
 }
 
 #app{
