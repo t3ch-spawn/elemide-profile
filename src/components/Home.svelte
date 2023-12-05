@@ -44,7 +44,7 @@
           gsap.timeline().fromTo(".caligraphy", {
         x: 200,
         opacity: 0,
-        duration: 0.8,
+        duration: 1.2,
         ease: 'power4.out', 
       }, {opacity: 1, x: 0}).fromTo(nameCont, {
 
