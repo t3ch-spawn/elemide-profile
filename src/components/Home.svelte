@@ -3,6 +3,7 @@
     import gsap from "gsap";
     import SplitType from "split-type";
     import { onMount } from "svelte"
+    // @ts-ignore
     import { Link } from "svelte-routing";
     import meet from "../assets/meet-pic.jpg"
     import caligraphy from "../assets/caligraphy.jpg"
@@ -132,6 +133,7 @@ let days, hours, mins, secs
 
       const agendaDate = new Date(2024, 0, 12)
     const currentDate = new Date()
+    // @ts-ignore
     const timeMilli = agendaDate - currentDate
 
     const secsLeft = Math.round(timeMilli/1000)
@@ -207,7 +209,7 @@ let days, hours, mins, secs
       <img src={meet} class="image scale-y-0 max-w-[300px] border-white border-2" alt="">
 
 
-      <div class="overflow-hidden flex">
+      <div class="overflow-hidden flex font-grotesk">
         <p class="paragraph w-[90%] max-w-[800px] mx-auto text-center flex" bind:this={aboutPara}>ELEMIDE; a 200 level Civil Engineering student, is widely known among UITES for his social nature. He has shown exemplary leadership and followership skills, actively heading and participating in various committees, including committees in the Students' Union.
           With a strong interest in politics, ELEMIDE has made his mark in the political space on campus. <br> Outside of his academic pursuits, he enjoys playing the piano, engaging in occasional sports, and eating good food.
           Importantly, ELEMIDE is your guy!
@@ -215,7 +217,7 @@ let days, hours, mins, secs
       </div>
 
       <!-- The countdown div -->
-      <div class="border-test3 border-[1px] flex flex-col justify-center items-center p-4 gap-4 mb-10">
+      <div class="border-test3 border-[1px] flex flex-col justify-center items-center p-4 gap-4 mb-10 font-grotesk">
         <p class="text-test3 text-center">ELEMIDE has got UITES curious about “The ***** Agenda.” <br> <br>
           What is “The ***** Agenda?” <br>
           Find out in: <br>

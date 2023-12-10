@@ -9,7 +9,10 @@ export default {
         test2: 'rgb(237, 157, 59, 0.3)',
         test3: '#F4B942',
         loader: '#F3F3F3'
-      }
+      },
+      fontFamily: {
+        grotesk: "Space Grotesk",
+      },
     },
   },
   plugins: [],

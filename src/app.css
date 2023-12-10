@@ -1,29 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
 @font-face {
-    font-family: 'Gabriel Weiss';
-    src: url('./assets/gabriel-weiss-friends-font/GabrielWeissFriendsFont-VGq7B.ttf') format('truetype');
+  font-family: "Gabriel Weiss";
+  src: url("./assets/gabriel-weiss-friends-font/GabrielWeissFriendsFont-VGq7B.ttf")
+    format("truetype");
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    font-family: 'Gabriel Weiss', sans-serif;
+body {
+  font-family: "Gabriel Weiss", sans-serif;
 }
 
-#app{
-    display: flex;
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    position: relative;
+#app {
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
 }
-
