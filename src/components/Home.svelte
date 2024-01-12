@@ -8,6 +8,7 @@
   import caligraphy from "../assets/caligraphy.jpg";
   import { ScrollTrigger } from "gsap/all";
   import Lenis from "@studio-freight/lenis";
+  import { Rive } from "@rive-app/canvas";
   let element;
   let user;
   let inp;
@@ -25,6 +26,16 @@
     hasLoaded = true;
   }
   onMount(() => {
+    // Rive code
+
+    const r = new Rive({
+      src: "../e-anim.riv",
+      // @ts-ignore
+      canvas: document.getElementById("canvas"),
+      autoplay: true,
+      stateMachines: "E-anim",
+    });
+
     // Lenis code
     const lenis = new Lenis();
 
@@ -44,15 +55,23 @@
 
     window.addEventListener("load", () => {
       setTimeout(() => {
-        gsap.to(".loader", {
-          height: 0,
-          duration: 1.2,
-          ease: "power4.inOut",
-
-          onStart: loaded,
-          onComplete: animateIn,
-        });
-      }, 1500);
+        gsap
+          .timeline()
+          .to("#canvas", {
+            opacity: 0,
+          })
+          .to(
+            ".loader",
+            {
+              height: 0,
+              duration: 1.2,
+              ease: "power4.inOut",
+              onStart: loaded,
+              onComplete: animateIn,
+            },
+            -0.2
+          );
+      }, 1800);
 
       function animateIn() {
         gsap
@@ -137,7 +156,7 @@
               trigger: aboutPara,
               start: "top 80%",
               end: "bottom 80%",
-              scrub: 1,
+              scrub: true,
               animation: gsap.from(aboutPara.querySelectorAll(".word"), {
                 opacity: 0,
                 stagger: 0.5,
@@ -185,9 +204,9 @@
 >
   <!-- Container for preloader -->
   <div
-    class={`text-black loader rounded-b-[120%] bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-[220%] justify-center items-center z-[4]`}
+    class={`text-black loader rounded-b-[120%] bg-loader text-3xl text-center flex fixed top-0 left-0 w-full h-[220%] justify-center items-start z-[4]`}
   >
-    <div
+    <!-- <div
       class={` ${
         hasLoaded ? "hidden" : "flex"
       } fixed top-[50%] translate-y-[50%]`}
@@ -196,7 +215,14 @@
       <p class="load-dots">.</p>
       <p class="load-dots">.</p>
       <p class="load-dots">.</p>
-    </div>
+    </div> -->
+
+    <canvas
+      class={`max-w-[500px] -500:max-w-[300px] translate-y-[20%]`}
+      id="canvas"
+      height="500"
+      width="500"
+    ></canvas>
   </div>
 
   <div class="overflow-hidden w-full top-0 left-0 fixed">
@@ -204,7 +230,10 @@
     <img src={caligraphy} class="caligraphy opacity-0 max-w-[180px]" alt="" />
   </div>
 
-  <div bind:this={nameCont} class="flex flex-col items-center gap-8 opacity-0 font-grotesk">
+  <div
+    bind:this={nameCont}
+    class="flex flex-col items-center gap-8 opacity-0 font-grotesk"
+  >
     <p class="text-3xl text-center">What's your name?</p>
     <input
       type="text"
