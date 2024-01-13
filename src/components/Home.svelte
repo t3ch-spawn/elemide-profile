@@ -218,7 +218,7 @@
     </div> -->
 
     <canvas
-      class={`max-w-[500px] -500:max-w-[300px] translate-y-[20%]`}
+      class={`pointer-events-none max-w-[500px] -500:max-w-[300px] translate-y-[20%]`}
       id="canvas"
       height="500"
       width="500"
