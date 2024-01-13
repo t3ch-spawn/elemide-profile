@@ -154,10 +154,10 @@
               trigger: aboutPara,
               start: "top 80%",
               end: "bottom 80%",
-              scrub: true,
+              scrub: 1,
               animation: gsap.from(aboutPara.querySelectorAll(".word"), {
                 opacity: 0,
-                stagger: 0.5,
+                stagger: 0.8,
               }),
             });
           },
@@ -236,6 +236,9 @@
     <input
       type="text"
       bind:this={inp}
+      on:keydown={(e) => {
+        if (e.key == "Enter") animate();
+      }}
       class="input w-[100%] p-2 text-2xl border-2 border-test3 text-test3 bg-black focus:outline-none rounded-md"
     />
 
