@@ -47,11 +47,11 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-      ".load-dots",
-      { y: -30, opacity: 0, duration: 2 },
-      { y: -5, stagger: 0.4, repeat: -1, ease: "bounce", opacity: 1 }
-    );
+    // gsap.fromTo(
+    //   ".load-dots",
+    //   { y: -30, opacity: 0, duration: 2 },
+    //   { y: -5, stagger: 0.4, repeat: -1, ease: "bounce", opacity: 1 }
+    // );
 
     window.addEventListener("load", () => {
       setTimeout(() => {
@@ -81,10 +81,8 @@
             {
               x: 200,
               opacity: 0,
-              duration: 1.2,
-              ease: "power4.inOut",
             },
-            { opacity: 1, x: 0 }
+            { opacity: 1, x: 0, duration: 0.8, ease: "power4.inOut" }
           )
           .fromTo(
             nameCont,
