@@ -147,7 +147,7 @@
           scaleY: 1,
           duration: 1.1,
           transformOrigin: "bottom center",
-          ease: "circ.inOut",
+          ease: "power2.in",
           onComplete: () => {
             hasImgAnimated = true;
             ScrollTrigger.create({
@@ -272,17 +272,37 @@
     <p
       class={`${
         hasImgAnimated ? "opacity-1" : "opacity-0"
-      } paragraph about-para w-[90%] max-w-[800px] mx-auto text-center font-grotesk`}
+      } paragraph about-para w-[90%] max-w-[800px] mx-auto text-center -900:text-left font-grotesk`}
       bind:this={aboutPara}
     >
-      ELEMIDE; a 200 level Civil Engineering student, is widely known among
-      UITES for his social nature. He has shown exemplary leadership and
-      followership skills, actively heading and participating in various
-      committees, including committees in the Students' Union. With a strong
-      interest in politics, ELEMIDE has made his mark in the political space on
-      campus. <br /> Outside of his academic pursuits, he enjoys playing the piano,
-      engaging in occasional sports, and eating good food. Importantly, ELEMIDE is
-      your guy!
+      I am ELEMIDE, a second-year student of the department of Civil
+      Engineering, Faculty of Technology, University of Ibadan. Known for my
+      engaging and sociable nature, I have become a familiar figure among fellow
+      UITES. During my free-time, I enjoy playing the piano, participating in
+      sports, and eating good food.
+      <br /><br />
+      During my first year at “the first and best university”, I was honored to receive
+      prestigious awards for my contributions to the UI community. As the recipient
+      of the "Creative of the Year" in both my department and faculty, as well as
+      "Freshman of the Year" in the department and Students' Union, I was recognized
+      for my creative thinking and dedication to fostering a vibrant campus environment.
+      <br /><br />
+      Beyond my academic pursuits, I have been actively engaged in addressing the
+      challenges faced by today's youth. As a member of "Youth Act," a platform dedicated
+      to tackling youth issues, I have participated in seminars that shed light on
+      prevalent issues and provided actionable steps for resolution. This experience
+      has further deepened my understanding of the concerns and aspirations of my
+      fellow students.
+      <br /><br />
+      My passion for leadership and active involvement in various committees, including
+      those within the Students' Union, has earned me a reputation for exemplary
+      leadership and followership skills.
+      <br /><br />
+      A testament to my commitment to student welfare and social engagement can be
+      seen through my active involvement in various Students' Union committees. These
+      include committees such as the UI SU Social Committee, UI SU Monitoring Committee,
+      and UI SU Week Committees, where I have successfully organized and planned
+      events with great people in our student community.
     </p>
 
     <!-- The countdown div -->
@@ -292,9 +312,9 @@
       <p class="text-test3 text-center">
         ELEMIDE has got UITES curious about “The ***** Agenda.” <br /> <br />
         What is “The ***** Agenda?” <br />
-        Find out in: <br />
+        <!-- Find out in: <br /> -->
       </p>
-      <div class="text-test3 flex gap-4">
+      <!-- <div class="text-test3 flex gap-4">
         <p>{`${days}`.padStart(2, "0")} days</p>
 
         <p>{`${hours}`.padStart(2, "0")} hrs</p>
@@ -304,7 +324,7 @@
         {/if}
 
         <p>{`${secs}`.padStart(2, "0")} secs</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </main>
