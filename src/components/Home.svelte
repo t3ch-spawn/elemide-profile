@@ -310,8 +310,12 @@
       class="border-test3 border-[1px] flex flex-col justify-center items-center p-4 gap-4 mb-10 font-grotesk"
     >
       <p class="text-test3 text-center">
-        ELEMIDE has got UITES curious about “The ***** Agenda.” <br /> <br />
-        What is “The ***** Agenda?” <br />
+        <!-- ELEMIDE has got UITES curious about “The ***** Agenda.” <br /> <br />
+        What is “The ***** Agenda?” <br /> -->
+
+        ELEMIDE has got UITES curious about “The House Agenda”, <br /> with the
+        crux of the agenda being students’ welfare. <br /> <br /> Find out more
+        about the movement:
         <!-- Find out in: <br /> -->
       </p>
       <!-- <div class="text-test3 flex gap-4">
