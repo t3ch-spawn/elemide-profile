@@ -9,6 +9,7 @@
   import { ScrollTrigger } from "gsap/all";
   import Lenis from "@studio-freight/lenis";
   import { Rive } from "@rive-app/canvas";
+  import Cookies from "./Cookies.svelte";
   let element;
   let user;
   let inp;
@@ -145,7 +146,8 @@
         {
           opacity: 1,
           scaleY: 1,
-          duration: 1.1,
+          duration: 1,
+          delay: -0.4,
           transformOrigin: "bottom center",
           ease: "power2.in",
           onComplete: () => {
@@ -159,6 +161,28 @@
                 opacity: 0,
                 stagger: 0.8,
               }),
+            });
+
+            ScrollTrigger.create({
+              trigger: ".elem-pic",
+              start: "40% 40%",
+              animation: gsap
+                .timeline()
+                .fromTo(
+                  ".cookies",
+                  {
+                    y: 200,
+                    opacity: 0,
+                  },
+                  { y: 0, opacity: 1, ease: "elastic.out", duration: 1.2 }
+                )
+                .to(".cookies", {
+                  scaleY: 1,
+                  delay: -0.7,
+
+                  duration: 0.5,
+                  ease: 'power1.out'
+                }),
             });
           },
         }
@@ -250,11 +274,13 @@
     </button>
   </div>
 
+  <!-- SECOND PAGE? -->
   <div
     class={`${
       user && done ? "flex " : "hidden"
     } duration-300 flex-col gap-12 items-center`}
   >
+    <Cookies />
     <p class="text-2xl user mt-[150px] font-grotesk">Hi {user},</p>
 
     <div class="overflow-hidden font-grotesk">
@@ -265,7 +291,7 @@
 
     <img
       src={meet}
-      class="image scale-y-0 max-w-[300px] border-white border-2"
+      class="image elem-pic scale-y-0 max-w-[300px] border-white border-2"
       alt=""
     />
 
