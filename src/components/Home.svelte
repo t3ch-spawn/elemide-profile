@@ -181,7 +181,7 @@
                   delay: -0.7,
 
                   duration: 0.5,
-                  ease: 'power1.out'
+                  ease: "power1.out",
                 }),
             });
           },
@@ -341,7 +341,11 @@
 
         ELEMIDE has got UITES curious about “The House Agenda”, <br /> with the
         crux of the agenda being students’ welfare. <br /> <br /> Find out more
-        about the movement:
+        about the movement,
+        <a
+          class="underline"
+          href="https://chat.whatsapp.com/DkJQVjCnz1o4qrltsuSSaI">here</a
+        >
         <!-- Find out in: <br /> -->
       </p>
       <!-- <div class="text-test3 flex gap-4">
