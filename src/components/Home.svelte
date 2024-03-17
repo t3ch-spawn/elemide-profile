@@ -146,10 +146,9 @@
         {
           opacity: 1,
           scaleY: 1,
+
           duration: 0.8,
-          delay: -0.1,
           transformOrigin: "bottom center",
-          ease: "power2.in",
           onComplete: () => {
             hasImgAnimated = true;
             ScrollTrigger.create({

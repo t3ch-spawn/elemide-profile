@@ -9,6 +9,7 @@
     gsap.timeline().to(".cookies", {
       y: 100,
       opacity: 0,
+      pointerEvents: "none",
     });
   }
 </script>
