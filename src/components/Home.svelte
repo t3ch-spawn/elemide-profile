@@ -146,8 +146,8 @@
         {
           opacity: 1,
           scaleY: 1,
-          duration: 1,
-          delay: -0.4,
+          duration: 0.8,
+          delay: -0.1,
           transformOrigin: "bottom center",
           ease: "power2.in",
           onComplete: () => {
@@ -174,11 +174,10 @@
                     y: 200,
                     opacity: 0,
                   },
-                  { y: 0, opacity: 1, ease: "elastic.out", duration: 1.2 }
+                  { y: 0, opacity: 1, ease: "power1.out", duration: 0.5 }
                 )
                 .to(".cookies", {
                   scaleY: 1,
-                  delay: -0.7,
 
                   duration: 0.5,
                   ease: "power1.out",
