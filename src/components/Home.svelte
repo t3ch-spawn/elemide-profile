@@ -220,7 +220,7 @@
 </script>
 
 <main
-  class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh]"
+  class="bg-bgBlack relative text-test3 flex flex-col items-center justify-center min-h-[100vh] pb-[20px]"
 >
   <!-- Container for preloader -->
   <div
@@ -366,6 +366,14 @@
 
         <p>{`${secs}`.padStart(2, "0")} secs</p>
       </div> -->
+    </div>
+
+    <div>
+      <a
+        href="https://twitter.com/t3ch_spawn"
+        class="font-grotesk underline text-test3 text-sm text-center mt-[100px]"
+        >t3ch_spawn</a
+      >
     </div>
   </div>
 </main>
