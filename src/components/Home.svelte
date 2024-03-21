@@ -300,17 +300,15 @@
       bind:this={aboutPara}
     >
       I am ELEMIDE, a second-year student of the department of Civil
-      Engineering, Faculty of Technology, University of Ibadan. Known for my
-      engaging and sociable nature, I have become a familiar figure among fellow
-      UITES. During my free-time, I enjoy playing the piano, participating in
-      sports, and eating good food.
+      Engineering, Faculty of Technology, University of Ibadan. I hail from Ogun
+      State, Odeda Local Government to be precise. During my free-time, I enjoy
+      playing the piano, participating in sports, and eating good food.
       <br /><br />
       During my first year at “the first and best university”, I was honored to receive
       prestigious awards for my contributions to the UI community. As the recipient
       of the "Creative of the Year" in both my department and faculty, as well as
       "Freshman of the Year" in the department and Students' Union, I was recognized
       for my creative thinking and dedication to fostering a vibrant campus environment.
-      <br /><br />
       Beyond my academic pursuits, I have been actively engaged in addressing the
       challenges faced by today's youth. As a member of "Youth Act," a platform dedicated
       to tackling youth issues, I have participated in seminars that shed light on
@@ -320,13 +318,24 @@
       <br /><br />
       My passion for leadership and active involvement in various committees, including
       those within the Students' Union, has earned me a reputation for exemplary
-      leadership and followership skills.
+      leadership and followership skills. A testament to my commitment to student
+      welfare and social engagement can be seen through my active involvement in
+      various Students' Union committees. These include committees such as the UI
+      SU Social Committee, UI SU Monitoring Committee, and UI SU Week Committees,
+      where I have successfully organized and planned events with great people in
+      our student community.
       <br /><br />
-      A testament to my commitment to student welfare and social engagement can be
-      seen through my active involvement in various Students' Union committees. These
-      include committees such as the UI SU Social Committee, UI SU Monitoring Committee,
-      and UI SU Week Committees, where I have successfully organized and planned
-      events with great people in our student community.
+      In conclusion, my tenure at the University of Ibadan has been nothing short
+      of transformative. As I stand on the cusp of vying for a political post, I
+      carry with me the lessons learned and the experiences gained during my time
+      at UI. My passion for leadership, coupled with my unwavering dedication to
+      student welfare and social engagement, fuels my ambition to serve not just
+      as a representative but as a catalyst for progress and empowerment.
+      <br /><br />
+      With boundless energy and a vision for a brighter future, I am ready to embark
+      on this new chapter of my journey, fueled by the support and trust of fellow
+      UITES. Together, let us dare to dream, to innovate, and to transform the University
+      of Ibadan into the first and best university, that she truly is!
     </p>
 
     <!-- The countdown div -->
