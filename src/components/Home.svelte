@@ -371,7 +371,7 @@
     <div>
       <a
         href="https://twitter.com/t3ch_spawn"
-        class="font-grotesk underline text-test3 text-sm text-center mt-[100px]"
+        class="font-grotesk underline text-test3 text-sm text-center mt-[80px]"
         >t3ch_spawn</a
       >
     </div>
